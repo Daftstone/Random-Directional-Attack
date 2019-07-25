@@ -155,5 +155,4 @@ if __name__ == '__main__':
     flags.DEFINE_integer('nb_dimensions', 10, 'Number of dimensions selected')
     flags.DEFINE_float('eps', 0.1,
                        'eps')
-    flags.DEFINE_integer("nb_epochs", NB_EPOCHS, "training epochs")
     tf.app.run()
