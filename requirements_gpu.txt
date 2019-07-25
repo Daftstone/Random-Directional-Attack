@@ -1,0 +1,4 @@
+tensorflow-gpu
+keras
+pillow
+scipy==1.2.1
