@@ -157,5 +157,4 @@ if __name__ == '__main__':
                          'train online or load from file')
     flags.DEFINE_float('eps', 0.1,
                        'eps')
-    flags.DEFINE_integer("nb_epochs", NB_EPOCHS, "training epochs")
     tf.app.run()
