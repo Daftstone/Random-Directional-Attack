@@ -30,7 +30,7 @@ def load_images(batch_shape, image_list):
 def data_imagenet(datadir='./temp_data', train_start=0, train_end=60000, test_start=0,
                   test_end=10000):
     """
-    Load and preprocess SVHN dataset
+    Load and preprocess ImageNet dataset
     :param datadir: path to folder where data should be stored
     :param train_start: index of first training set example
     :param train_end: index of last training set example
