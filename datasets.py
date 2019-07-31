@@ -60,6 +60,7 @@ def data_imagenet(datadir='./temp_data', train_start=0, train_end=60000, test_st
     X_train, Y_train = load_images([224, 224, 3], train_image_list[:100])
     X_test, Y_test = load_images([224, 224, 3], test_image_list)
     X_test /= 255.
+    X_train /=255.
 
     print("load fmnist:")
     print("train examples: %d" % (X_train.shape[0]))
