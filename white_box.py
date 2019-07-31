@@ -37,6 +37,10 @@ BATCH_SIZE = 128
 
 def attack(nb_epochs=NB_EPOCHS, batch_size=BATCH_SIZE,
            ):
+    """
+    :param nb_epochs: number of epochs to train model
+    :param batch_size: size of training batches
+    """
 
     # keras.layers.core.K.set_learning_phase(0)
 
