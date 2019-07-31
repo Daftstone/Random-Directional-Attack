@@ -59,7 +59,7 @@ class IMAGENET_model:
                     idx = 0
             if idx > 0:
                 yield images / 255., labels
-    def train(self, x_train, y_train, x_test, y_test, batch_size=128, nb_epochs=250, is_train=True):
+    def train(self, x_train, y_train, x_test, y_test, batch_size=128, nb_epochs=100, is_train=True):
         """
         detect adversarial examples
         :param x_train: train data
@@ -87,7 +87,7 @@ class IMAGENET_model:
             target_size=(224, 224),
             batch_size=64,
         )
-        test_datagen = ImageDataGenerator(rescale=1. / 255)  # 验证集不用增强
+        test_datagen = ImageDataGenerator(rescale=1. / 255)
         validation_generator = test_datagen.flow_from_directory(
             'dataset/imagenet/val',
             target_size=(224, 224),
@@ -117,7 +117,7 @@ class IMAGENET_model:
         print("#############")
         if (is_train == True):
             self.model.fit_generator(train_generator,
-                                     steps_per_epoch=len(image_list) // batch_size, epochs=200,
+                                     steps_per_epoch=len(image_list) // batch_size, epochs=nb_epochs,
                                      callbacks=callbacks,
                                      validation_data=validation_generator,
                                      validation_steps=x_test_temp.shape[0] // batch_size, verbose=1)
