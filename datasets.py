@@ -62,7 +62,7 @@ def data_imagenet(datadir='./temp_data', train_start=0, train_end=60000, test_st
     X_test /= 255.
     X_train /=255.
 
-    print("load fmnist:")
+    print("load imagenet:")
     print("train examples: %d" % (X_train.shape[0]))
     print("test examples: %d" % (X_test.shape[0]))
 
@@ -222,7 +222,7 @@ def data_svhn(datadir='./dataset/svhn', train_start=0, train_end=60000, test_sta
     X_test = X_test.astype('float32') / 255
     Y_test = np_utils.to_categorical(y_test)
 
-    print("load fmnist:")
+    print("load svhn:")
     print("train examples: %d" % (X_train.shape[0]))
     print("test examples: %d" % (X_test.shape[0]))
 
