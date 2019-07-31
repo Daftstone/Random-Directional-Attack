@@ -362,9 +362,7 @@ def RDA(model, x_test, y_test, direction_total, eps, batch_size=128, angle=180, 
     jump_batch = list()
 
     count = 0
-    cc = 0
     while (count != len(x_test)):
-        cc += 1
         cur_len = len(direction_batch)
         for i in range(batch_size - cur_len):
             if (end == len(x_test)):
@@ -378,7 +376,6 @@ def RDA(model, x_test, y_test, direction_total, eps, batch_size=128, angle=180, 
             jump_batch.append(False)
             end += 1
         rot_matrix = get_metrix_index(angle, nb_dimension, total_dimensions)
-        print(count, len(index_batch), end, cc)
 
         direction_batch_temp = direction_batch.copy()
         true_class_batch_temp = true_class_batch.copy()
@@ -439,7 +436,6 @@ def RDA(model, x_test, y_test, direction_total, eps, batch_size=128, angle=180, 
                 jump_batch.pop(i)
             else:
                 jump_batch[i] = False
-    print(cc)
     return np.reshape(direction, x_test.shape)
 
 def mnist_model(nb_filters=64, input_shape=(None, 28, 28, 1)):
