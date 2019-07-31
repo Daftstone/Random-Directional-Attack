@@ -116,7 +116,7 @@ class CIFAR10_model:
         model.add(Activation('softmax'))
         return model
 
-    def train(self, x_train, y_train, x_test, y_test, batch_size=128, nb_epochs=250, is_train=True):
+    def train(self, x_train, y_train, x_test, y_test, batch_size=128, nb_epochs=100, is_train=True):
         """
         detect adversarial examples
         :param x_train: train data
