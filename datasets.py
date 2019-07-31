@@ -56,8 +56,6 @@ def data_imagenet(datadir='./temp_data', train_start=0, train_end=60000, test_st
                 test_image_list.append([temp[0], int(temp[1])])
             elif (temp[0][17] == 't'):
                 train_image_list.append([temp[0], int(temp[1])])
-    random.seed(0)
-    random.shuffle(train_image_list)
     random.shuffle(test_image_list)
     X_train, Y_train = load_images([224, 224, 3], train_image_list[:100])
     X_test, Y_test = load_images([224, 224, 3], test_image_list)
