@@ -32,7 +32,7 @@ K.set_session(sess)
 
 FLAGS = flags.FLAGS
 
-NB_EPOCHS = 60
+NB_EPOCHS = 100
 BATCH_SIZE = 128
 
 
@@ -114,11 +114,9 @@ def attack(nb_epochs=NB_EPOCHS, batch_size=BATCH_SIZE):
     d3 = get_adv_examples(sess, wrap, "mi-fgsm", x_test, y_test)
     print('Test accuracy on mi-fgsm examples: %0.4f\n' % model_eval(sess, x, y, model(x), d3, y_test,
                                                                     args=eval_par))
-
-    start = time.time()
+    
+    # Evaluate the accuracy of the trained model on RDA examples
     rda_direction = RDA(model, x_test, y_test, gradient, FLAGS.eps, batch_size)
-    end = time.time()
-    print(end - start)
     x_adv = np.clip(x_test + np.sign(rda_direction) * FLAGS.eps, 0, 1)
     acc = model_eval(sess, x, y, model(x), x_adv, y_test, args=eval_par)
     print('Test accuracy on RDA examples: %0.4f\n' % acc)
