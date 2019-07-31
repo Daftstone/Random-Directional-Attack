@@ -37,22 +37,7 @@ BATCH_SIZE = 128
 
 def attack(nb_epochs=NB_EPOCHS, batch_size=BATCH_SIZE,
            ):
-    """
-    MNIST CleverHans tutorial
-    :param train_start: index of first training set example
-    :param train_end: index of last training set example
-    :param test_start: index of first test set example
-    :param test_end: index of last test set example
-    :param nb_epochs: number of epochs to train model
-    :param batch_size: size of training batches
-    :param learning_rate: learning rate for training
-    :param train_dir: Directory storing the saved model
-    :param filename: Filename to save model under
-    :param load_model: True for load, False for not load
-    :param testing: if true, test error is calculated
-    :param label_smoothing: float, amount of label smoothing for cross entropy
-    :return: an AccuracyReport object
-    """
+
     # keras.layers.core.K.set_learning_phase(0)
 
     # Object used to keep track of (and return) key accuracies
