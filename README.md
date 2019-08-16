@@ -91,6 +91,7 @@ python black_box.py --data mnist --max_angle 180 --nb_dimensions 10 --eps 0.05 -
 
 ## 7. Citation
 If you want to use random directional atttack for attack in academic research, you are expected to cite
+
   @article{luo2019random,
   title={Random Directional Attack for Fooling Deep Neural Networks},
   author={Luo, Wenjian and Wu, Chenwang and Zhou, Nan and Ni, Li},
