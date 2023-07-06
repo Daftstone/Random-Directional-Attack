@@ -1,4 +1,4 @@
 tensorflow-gpu
 keras
 pillow
-scipy==1.2.1
+scipy==1.10.0
